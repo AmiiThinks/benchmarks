@@ -10,3 +10,4 @@ COPY MicroRTS.jar /home/MicroRTS/MicroRTS.jar
 COPY logs2 /home/MicroRTS/logs2
 RUN chmod +777 /home/MicroRTS/MicroRTS.jar
 CMD java -jar /home/MicroRTS/MicroRTS.jar
+CMD java -jar /home/MicroRTS/MicroRTS.jar >> /home/MicroRTS/log.txt
