@@ -1,5 +1,8 @@
-# MicroRT Docker File (Compact into splited file)
-Docker image to perform tests on MicroRTS divided into 17 files (dockerMicroRTS.tar.gz*) .
+# Benchmark for MicroRT 
 
-# MicroRT Docker Folder
-Folder Files to Generate Docker contains all the files and Dockerfile to generate a Docker image from scratch if necessary.
+Author: Rubens O. Moraes (rubensolv@gmail.com)
+
+Building Docker image:
+```bash
+docker build -t latentsyn_trainer_benchmark -f TrainerBenchmark/Dockerfile .
+```
