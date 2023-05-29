@@ -1,0 +1,10 @@
+env
+.ipynb_checkpoints/
+.python-version
+__pycache__/
+*.py[cod]
+.idea
+problems
+plots
+runs
+wandb

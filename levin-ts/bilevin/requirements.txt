@@ -1,0 +1,9 @@
+torch==1.13.1
+torch_scatter
+tensorboard
+aenum
+pandas
+tabulate
+tqdm
+wandb
+matplotlib
