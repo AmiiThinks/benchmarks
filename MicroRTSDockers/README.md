@@ -2,7 +2,8 @@
 
 Author: Rubens O. Moraes (rubensolv@gmail.com)
 
-Building Docker image:
+## Building Docker image for specific maps:
+It requires to get into the folders. Example: map8x8Dockerfile. 
 ```bash
-docker build -t latentsyn_trainer_benchmark -f TrainerBenchmark/Dockerfile .
+sudo docker build . -t rubens/microrts:1.0
 ```
