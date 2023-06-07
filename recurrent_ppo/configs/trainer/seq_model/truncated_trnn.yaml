@@ -1,0 +1,4 @@
+name: truncated_trnn
+d_model: 600
+n_layers: 2
+reset_hidden_on_terminate: true

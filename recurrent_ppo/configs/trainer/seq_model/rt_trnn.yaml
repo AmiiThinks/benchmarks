@@ -1,0 +1,5 @@
+name: rt_trnn
+d_model: 800
+n_layers: 1
+reset_hidden_on_terminate: true
+d_input: 2
