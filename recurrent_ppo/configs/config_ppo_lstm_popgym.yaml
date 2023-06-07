@@ -1,7 +1,7 @@
 tags: null
 project_name: test
 seed: 0
-steps: 90000
+steps: 188416
 log_interval: 10000
 eval_episodes: 5
 record_fps: 5
