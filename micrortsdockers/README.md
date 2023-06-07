@@ -1,7 +1,8 @@
 # Benchmark for MicroRT 
 
 Author: Rubens O. Moraes (rubensolv@gmail.com)
-
+## Warning: 
+This Docker relies on Ubuntu Container and it may not run on Mac OS. The current setting was tested on linux/unix distribution. 
 ## Environments:
 We provided different environments for MicroRTS, according to the map and enemies for each map. Each environment is related with one different folder in the repository.
 
