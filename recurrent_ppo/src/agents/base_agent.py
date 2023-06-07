@@ -73,8 +73,8 @@ class BaseAgent:
                                        self.h_tickminus1)
         def params_sum(params):
             return sum(jax.tree_util.tree_leaves(jax.tree_map(lambda x: np.prod(x.shape),params)))
-        logger.info("Total Number of params: %d"%params_sum(self.params))
-        logger.info("Number of params in Seq Model: %d"%params_sum(self.params['params']['seq_model']))
+        #logger.info("Total Number of params: %d"%params_sum(self.params))
+        #logger.info("Number of params in Seq Model: %d"%params_sum(self.params['params']['seq_model']))
     @property
     def params(self):
         return self._params

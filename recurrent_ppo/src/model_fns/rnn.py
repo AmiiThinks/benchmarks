@@ -51,9 +51,9 @@ class LSTMMultiLayer(nn.Module):
         new_memory=[None]*self.n_layers
         for i in range(self.n_layers):
             if i == 0:
-                print(inputs.shape)
-                print(last_states[i][0].shape)
-                print(last_states[i][1].shape)
+                #print(inputs.shape)
+                #print(last_states[i][0].shape)
+                #print(last_states[i][1].shape)
                 y_t, new_memory[i] = LSTM(self.d_model,self.reset_on_terminate)(inputs, terminations,last_states[i])
             else:
                 y_t, new_memory[i] = LSTM(self.d_model,self.reset_on_terminate)(y_t, terminations,last_states[i])

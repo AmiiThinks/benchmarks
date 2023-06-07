@@ -85,8 +85,8 @@ class ControlTrainer(BaseTrainer):
         eval_env=RecordRollout(AutoResetWrapper(eval_env_fn()))
         train_envs.reset(seed=train_seeds)
         eval_env.reset(seed=eval_seeds)
-        logger.info("Observation space: "+str(eval_env.observation_space))
-        logger.info("Action space: "+str(eval_env.action_space))
+        #logger.info("Observation space: "+str(eval_env.observation_space))
+        #logger.info("Action space: "+str(eval_env.action_space))
 
         params_key,self.random_key=jax.random.split(kwargs['key'])
         
@@ -94,28 +94,12 @@ class ControlTrainer(BaseTrainer):
             model_fn=seq_model_lstm(**self.trainer_config['seq_model'])
         elif self.trainer_config.seq_model.name=='gru':
             model_fn=seq_model_gru(**self.trainer_config['seq_model'])
-        elif self.trainer_config.seq_model.name == 'truncated_trnn':
-            model_fn=seq_model_truncated_trnn(**self.trainer_config['seq_model'])
-        elif self.trainer_config.seq_model.name == 'lru':
-            model_fn=seq_model_lru(**self.trainer_config['seq_model'])  
-        elif self.trainer_config.seq_model.name == 'rt_trnn':
-            model_fn=seq_model_rt_trnn(**self.trainer_config['seq_model'])
+
 
         actor_fn=actor_model_discete(self.trainer_config['d_actor'],eval_env.action_space.n)
         critic_fn=critic_model(self.trainer_config['d_critic'])
         #Setup optimizer
-        
-        if self.trainer_config['agent']=='a2c':
-            self.optimizer=optax.chain(optax.clip_by_global_norm(self.trainer_config['max_grad_norm']),  # Clip by the gradient by the global norm.
-                                    optax.adam(**self.trainer_config.optimizer))  # Use Adam optimizer with learning rate.
-            self.agent=A2CAgent(train_envs=train_envs,eval_env=eval_env,optimizer=self.optimizer, repr_model_fn=repr_fn,
-                                seq_model_fn=model_fn,actor_fn=actor_fn,critic_fn=critic_fn,
-                                rollout_len=self.rollout_len,
-                                gamma=self.trainer_config['gamma'],lamb=self.trainer_config['lamb'],
-                                value_loss_coef=self.trainer_config['value_coef'],
-                                entropy_coef=self.trainer_config['entropy_coef'],
-                                arg_max=self.trainer_config['arg_max'])
-        elif self.trainer_config['agent']=='ppo':
+        if self.trainer_config['agent']=='ppo':
             #Used from CleanRL PPO implementation
             batch_size = self.trainer_config['num_envs']*self.trainer_config['rollout_len'] 
             num_updates = self.global_config.steps // batch_size

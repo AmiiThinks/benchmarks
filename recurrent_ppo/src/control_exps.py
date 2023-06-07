@@ -59,7 +59,7 @@ def main(config: DictConfig):
             pbar.update(n=step_count-last_step_count)
             last_step_count=step_count
             if metrics is not None:
-                logger.info("Seed: "+str(config.seed)+" Steps: "+str(step_count)+" Metrics: "+str(metrics))
+                #logger.info("Seed: "+str(config.seed)+" Steps: "+str(step_count)+" Metrics: "+str(metrics))
                 if config.use_wandb: run.log({'seed':config.seed,**metrics
                                                 },step=step_count)
 

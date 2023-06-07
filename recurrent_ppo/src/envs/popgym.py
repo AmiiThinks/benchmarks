@@ -29,7 +29,7 @@ def create_popgym_env(**env_config):
     env=gym.make(env_config['name'])
     if env.observation_space.__class__.__name__=='MultiDiscrete' or env.observation_space.__class__.__name__=='Discrete':
         env = FlattenObservation(env)
-        print("Using FlattenObservation because of MultiDiscrete observation space")
+        #print("Using FlattenObservation because of MultiDiscrete observation space")
     if env.action_space.__class__.__name__=='MultiDiscrete':
         env = MultiDiscreteToDiscreteWrapper(env)
     return env
