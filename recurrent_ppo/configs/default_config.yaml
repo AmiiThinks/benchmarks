@@ -9,8 +9,8 @@ eval_interval: null
 use_wandb: true
 trainer:
   gae_lambda: 0.9
-  rollout_len: 256
-  sequence_length: 32
+  rollout_len: 1024
+  sequence_length: null
   num_envs: 8
   gamma: 0.99
   ent_coef:
@@ -20,9 +20,8 @@ trainer:
     learning_rate:
       initial: 0.0001
   seq_model:
-    d_model: 64
-    n_layers: 1 
-    d_input: 2
+    d_model: 124
+    n_layers: 2
 task:
   name: popgym-NoisyStatelessCartPoleHard-v0
 defaults:
