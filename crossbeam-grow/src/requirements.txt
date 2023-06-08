@@ -1,0 +1,9 @@
+torch==1.13.1
+numpy==1.24.2
+absl_py==1.4.0
+Levenshtein==0.21.0
+pickle5==0.0.11
+rapidfuzz==2.13.7
+torch_scatter==2.1.1
+tqdm==4.65.0
+typing_extensions==4.5.0
