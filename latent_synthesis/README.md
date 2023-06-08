@@ -50,7 +50,8 @@ Executing benchmark:
 docker run --runtime=nvidia --gpus all latentsyn_trainer_benchmark
 ```
 
-**Note**: The Docker image produced by Trainer Benchmark is very large (~10GB) because it is based on the official PyTorch image that contains CUDA and CudNN for GPU usage.
+**Note 1**: In some systems, it is not necessary to include the flag `--runtime=nvidia`, but NVIDIA's documentation recommends it for Ubuntu-based systems.
+**Note 2**: The Docker image produced by Trainer Benchmark is very large (~10GB) because it is based on the official PyTorch image that contains CUDA and CudNN for GPU usage.
 
 ### Using VirtualEnv
 
