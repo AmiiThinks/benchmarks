@@ -10,10 +10,14 @@ We provided different environments for MicroRTS, according to the map and enemie
 It requires getting into the folders. Example for folder map8x8Dockerfile. 
 ```bash
 sudo docker build . -t map8x8dockerfile/microrts:1.0
+sudo docker build . -t map16x16dockerfile/microrts:1.0
+sudo docker build . -t map24x24dockerfile/microrts:1.0
 ```
 ### Following by the execution:
 ```bash
 sudo docker run -it map8x8dockerfile/microrts:1.0
+sudo docker run -it map16x16dockerfile/microrts:1.0
+sudo docker run -it map24x24dockerfile/microrts:1.0
 ```
 ## Benchmarks
 Each container is going to run and produce a output as described below:
