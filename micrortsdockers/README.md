@@ -32,5 +32,3 @@ FP_910000_5512262.txt;0.75;0.5;0.5;0.5;0.0;0.0;0.5;0.25;0.25;
 SP_910000_5512217.txt;0.0;0.5;0.0;0.5;0.0;0.5;0.25;0.0;0.25;
 DO_910000_5354876.txt;0.0;0.5;0.5;0.75;0.5;0.0;0.5;0.5;0.5;Finished all battles Mon May 29 21:14:11 GMT 2023
 Took: 8 seconds
-
-It also produce a file in the container /home/MicroRTS/log.txt. That file could be amazing to be copied for validations.
