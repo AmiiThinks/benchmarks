@@ -1,0 +1,10 @@
+ray==2.4.0
+ray[rllib]
+tensorflow==2.12.0
+torch==1.13.1
+gymnasium
+gym
+gym[atari]
+dm_tree
+gym[accept-rom-license]
+atari_py
