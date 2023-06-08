@@ -9,5 +9,4 @@ COPY sygus_string_tasks/ sygus_string_tasks/
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 WORKDIR /app/src
-CMD python3 bustle_batch_encoded_main.py
-RUN cat ../logs/encoded_bustle_output.log
+CMD python3 bustle_batch_encoded_main.py; cat ../logs/encoded_bustle_output.log
