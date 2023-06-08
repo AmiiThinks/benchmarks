@@ -1,0 +1,2 @@
+cd src
+python train.py --env_name=MiniGrid-Empty-8x8-v0-fullobs --ae_model_type=soft_vqvae --filter_size=6 --codebook_size=256 --trans_model_type=continuous --trans_depth=4 --trans_hidden=512 --q_hidden 512 256 256 --n_dyna_updates=4 --n_trans_updates=4 --dyna_batch_size=128 --dyna_steps=30_000 --er_train_model --ae_recon_loss --device=cuda
