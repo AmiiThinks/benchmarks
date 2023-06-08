@@ -27,9 +27,9 @@ atari_lib.create_atari_environment.sticky_actions = True
 create_runner.schedule = 'continuous_train'
 create_agent.agent_name = 'jax_rainbow'
 create_agent.debug_mode = True
-Runner.num_iterations = 33
+Runner.num_iterations = 4
 Runner.training_steps = 15000  # agent steps
-Runner.evaluation_steps = 125000  # agent steps
+Runner.evaluation_steps = 7500  # agent steps
 Runner.max_steps_per_episode = 27000  # agent steps
 
 OutOfGraphPrioritizedReplayBuffer.replay_capacity = 1000000
