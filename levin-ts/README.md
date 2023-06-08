@@ -7,3 +7,4 @@ Run the benchmark. Argument <world_size> to test.sh is the number of cores to us
 ```bash
 docker run -v $(pwd):/bilevin/runs/docker -P levin-ts /bin/bash -c "cd /bilevin && ./test.sh <world_size>"
 ```
+**Note**: the progress bar will not show incremental progress.
