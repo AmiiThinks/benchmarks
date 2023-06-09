@@ -1,0 +1,3 @@
+[submodule "dopamine/submodule"]
+	path = dopamine/submodule
+	url = ssh://git@github.com/google/dopamine

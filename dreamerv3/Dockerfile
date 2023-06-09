@@ -31,14 +31,10 @@ RUN pip3 install --upgrade pip
 ENV MUJOCO_GL egl
 ENV DMLAB_DATASET_PATH /dmlab_data
 COPY scripts scripts
-RUN sh scripts/install-dmlab.sh
 RUN sh scripts/install-atari.sh
-RUN sh scripts/install-minecraft.sh
 ENV NUMBA_CACHE_DIR=/tmp
 RUN pip3 install crafter
 RUN pip3 install dm_control
-RUN pip3 install robodesk
-RUN pip3 install bsuite
 
 # Agent
 RUN pip3 install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
