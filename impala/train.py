@@ -124,7 +124,7 @@ if __name__=='__main__':
     
     
     t1,a1=exp1(args)
-    t1,a2=exp2(args)
+    t2,a2=exp2(args)
     t3,a3=exp3(args)
     print("IMPALA+FF Avg time per iteration:",a1, " Total time:", t1)
     print("IMPALA+LSTM Avg time per iteration:",a2, " Total time:", t2)
