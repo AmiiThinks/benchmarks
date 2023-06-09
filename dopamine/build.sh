@@ -1,3 +1,8 @@
+if [ -z "$(ls -A submodule)" ]; then
+    git submodule init
+    git submodule update
+fi
+
 if [ ! -f ./Roms.rar ]; then
     wget http://www.atarimania.com/roms/Roms.rar -O ./Roms.rar
 fi

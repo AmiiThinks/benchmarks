@@ -1,8 +1,5 @@
 To run:
 ```bash
-# grab dopamine submodule
-git submodule init
-git submodule update
 ./build.sh
 ```
 
