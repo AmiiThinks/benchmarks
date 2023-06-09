@@ -12,4 +12,4 @@
 
 ## logs located at
 
-`app/dreamer_output.log `
+`/dreamer/dreamer_output.log `
