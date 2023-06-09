@@ -30,28 +30,11 @@ This will build the Docker image with the necessary dependencies for running the
 To run the benchmark, use the following command:
 
 ```bash
-sudo docker run impala-benchmark python3 train.py --model_type=<MODEL_TYPE> --num_gpus=<NUM_GPUS>
-```
-
-Replace `<MODEL_TYPE>` with the desired model type (`FF`, `LSTM`, or `TRF`) and `<NUM_GPUS>` with the number of GPUs to use.
-
-For example, to train an LSTM model without using any GPUs, use the following command:
-
-```bash
-sudo docker run impala-benchmark python3 train.py --model_type=LSTM --num_gpus=0
+sudo docker run impala-benchmark python3 train.py  --num_gpus=<NUM_GPUS>
 ```
 
 Running the script should take around 10 min. At end the total execution time and average time for each training is printed. 
 
-## Available Benchmarks
-
-The benchmark supports the following model types:
-
-- Feedforward Neural Network (FF)
-- Long Short-Term Memory (LSTM)
-- Transformer (TRF)
-
-These models can be selected by specifying the corresponding `--model_type` option when running the benchmark.
 
 ## Additional Options
 
@@ -59,9 +42,7 @@ The `train.py` script supports the following optional arguments:
 
 - `-h`, `--help`: Show the help message and exit.
 - `--num_gpus NUM_GPUS`: Specify the number of GPUs to use.
-- `--model_type MODEL_TYPE`: Specify the model type to use (`FF`, `LSTM`, or `TRF`).
 
-Feel free to explore and modify the `train.py` script to suit your needs.
 
 ## Files
 

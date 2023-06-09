@@ -1,0 +1,3 @@
+[submodule "dopamine/submodule"]
+	path = dopamine/submodule
+	url = https://github.com/google/dopamine
