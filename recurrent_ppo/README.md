@@ -1,13 +1,6 @@
 ```
- $ conda create --name rec_ppo --file requirements.txt
-```
-
-To run PPO+LSTM on POPGYM:
-```
-python recurrent_ppo/src/control_exps.py --config-name=config_ppo_lstm_popgym
-```
-
-To run PPO+RNN on POPGYM:
-```
-python recurrent_ppo/src/control_exps.py --config-name=config_ppo_gru_popgym
+$git clone https://github.com/AmiiThinks/benchmarks.git
+$cd benchmarks/recurrent_ppo/
+$docker build -t recurrent_ppo .
+$docker exec -it recurrent_ppo bash -c "./run.sh" 
 ```
