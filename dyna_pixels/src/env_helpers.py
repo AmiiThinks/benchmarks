@@ -1,7 +1,7 @@
 from collections import namedtuple
 import os
 
-import cv2
+# import cv2
 import numpy as np
 import gym
 from gym import Wrapper
@@ -156,8 +156,9 @@ class Custom2DWrapper(Wrapper):
   def observation(self, obs):
     # Resize the dimensions
     if self.rescale:
-      obs = cv2.resize(obs, (self.rescale_size, self.rescale_size),
-              interpolation=cv2.INTER_AREA)
+      # obs = cv2.resize(obs, (self.rescale_size, self.rescale_size),
+      #         interpolation=cv2.INTER_AREA)
+      pass # Not needed for benchmark
     
     # Convert to grayscale
     if self.grayscale_obs:

@@ -6,7 +6,7 @@ import numpy as np
 def make_dyna_arg_parser():
   # These are the dyna-specific arguments only
   parser = argparse.ArgumentParser()
-  parser.add_argument('--q_hidden', type=int, nargs='*', default=[256, 256])
+  parser.add_argument('--q_hidden', type=int, nargs='*', default=[512, 256, 256])
   parser.add_argument('--dyna_steps', type=int, default=100_000)
   parser.add_argument('--epsilon', type=float, default=0.15)
   parser.add_argument('--gamma', type=float, default=0.99)

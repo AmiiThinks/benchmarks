@@ -5,4 +5,12 @@ This benchmark uses a function approximation verison of dyna with an auxillary o
 
 ## Run Instructions
 
-WIP, I will add a docker file soon
+1. First build the docker container:
+`docker build -t dyna-benchmark .`
+
+2. Then run it:
+`docker run dyna-benchmark`
+
+After the run is complete, a benchmark report will be printed.
+
+*Note: this benchmark still needs to be validated
