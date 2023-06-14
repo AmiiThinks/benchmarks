@@ -369,10 +369,7 @@ if __name__ == "__main__":
     logging.info('TaskId: ' + str(TaskId))
     benchmark = None
     experiment_begin_time = round(time.time())
-    while True:
-        current_time = round(time.time())
-        if current_time - experiment_begin_time > 200:
-            break
+    for repeat_index in range(1, 60):
         for count, filename in enumerate(benchmarks):
             if count > 5:
                 break
@@ -423,3 +420,6 @@ if __name__ == "__main__":
                 logging.info("Time taken: " + str(datetime.now() - begin_time))
 
             logging.info("\n\n")
+    experiment_end_time = round(time.time())
+    print("Benchmark Time Taken: ", experiment_end_time-experiment_begin_time)
+    logging.info("Benchmark Time Taken: " + str(experiment_end_time-experiment_begin_time))
