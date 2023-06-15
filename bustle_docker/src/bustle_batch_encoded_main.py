@@ -369,7 +369,7 @@ if __name__ == "__main__":
     logging.info('TaskId: ' + str(TaskId))
     benchmark = None
     experiment_begin_time = round(time.time())
-    for repeat_index in range(1,75):
+    for repeat_index in range(1,90):
         for count, filename in enumerate(benchmarks):
             if count > 5:
                 break
