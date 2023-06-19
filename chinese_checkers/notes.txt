@@ -1,0 +1,16 @@
+Error logs of Chinese checkers
+
+Creating condo env with arm64 python (works well with 3.8, and not other python versions)
+CONDA_SUBDIR=osx-arm64 conda create -n {name_of_env} python=3.8 -c conda-forge --override-channels
+https://stackoverflow.com/questions/65415996/how-to-specify-the-architecture-or-platform-for-a-new-conda-environment-apple
+(Don't make it permanent, doesnt work with some packages)
+
+Pybind error:
+conda install pybind11 -c conda-forge
+https://github.com/pybind/pybind11/issues/1379
+
+H5py error
+https://stackoverflow.com/questions/66741778/how-to-install-h5py-needed-for-keras-on-macos-with-m1
+
+
+

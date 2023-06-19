@@ -1,0 +1,33 @@
+{
+    "self_play" : {
+        "iterations": 30,
+        "num_parallel_play_worker": 7,
+        "games_per_iteration": 50,
+        "replay_buffer_size": 500,
+        "train_percentage": 1,
+        "keep_old_data_probability": 0,
+        "sample_size": 500
+    },
+    "mcts": {
+        "samples": 100
+    },
+    "training" : {
+        "batch_size": 100,
+        "epochs": 1,
+        "learning_rate": 0.00001,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "seed": 42
+    },
+    "file": {
+        "logs_path": "/Users/bigyankarki/Desktop/bigyan/results/jax/single/logs/",
+        "training_data": "/Users/bigyankarki/Desktop/bigyan/results/jax/single/data/",
+        "training_plots": "/Users/bigyankarki/Desktop/bigyan/results/jax/single/plots/",
+        "trained_model_params_path":  "/Users/bigyankarki/Desktop/bigyan/results/jax/single/trained_models/",
+        
+        "logs_path_parallel": "/Users/bigyankarki/Desktop/bigyan/results/jax/parallel/logs/",
+        "training_data_parallel": "/Users/bigyankarki/Desktop/bigyan/results/jax/parallel/data/",
+        "training_plots_parallel": "/Users/bigyankarki/Desktop/bigyan/results/jax/parallel/plots/",  
+        "trained_model_params_path_parallel": "/Users/bigyankarki/Desktop/bigyan/results/jax/parallel/trained_models/"
+    }
+}

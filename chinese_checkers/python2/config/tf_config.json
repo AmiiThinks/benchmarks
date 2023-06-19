@@ -1,0 +1,26 @@
+{
+    "self_play" : {
+        "games": 300,
+        "iterations": 10
+    },
+    "mcts": {
+        "samples": 400
+    },
+    "training" : {
+        "batch_size": 100,
+        "epochs": 1,
+        "learning_rate": 0.00001,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "seed": 42
+    },
+    "file": {
+        "training_data_single": "/Users/bigyankarki/Desktop/bigyan/results/tf/single/data/",
+        "training_plots_single": "/Users/bigyankarki/Desktop/bigyan/results/tf/single/plots/",
+        "trained_model_params_path_single":  "/Users/bigyankarki/Desktop/bigyan/results/tf/single/trained_models/",
+        
+        "training_data_parallel": "/Users/bigyankarki/Desktop/bigyan/results/tf/parallel/data",
+        "training_plots_parallel": "/Users/bigyankarki/Desktop/bigyan/results/tf/parallel/plots/",  
+        "trained_model_params_path_parallel": "/Users/bigyankarki/Desktop/bigyan/results/tf/parallel/trained_models/"
+    }
+}

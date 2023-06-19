@@ -1,0 +1,33 @@
+{
+    "self_play" : {
+        "iterations": 30,
+        "num_parallel_play_worker": 6,
+        "replay_buffer_size": 1000000,
+        "train_percentage": 0.1,
+        "keep_old_data_probability": 0.05,
+        "sample_size": 100
+    },
+    "mcts": {
+        "samples": 100
+    },
+    "training" : {
+        "batch_size": 64,
+        "epochs": 1,
+        "learning_rate": 0.00001,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "seed": 42
+    },
+    "file": {
+        "logs_path": "./results/logs/",
+        "training_data_path": "./results/data/",
+        "training_plots_path": "./results/plots/",  
+        "trained_model_params_path": "./results/trained_models/"
+    },
+    "linux_file": {
+        "logs_path": "/data/home/bkarki/cc/results/async_jax/logs/",
+        "training_data_path": "/data/home/bkarki/cc/results/async_jax/data",
+        "training_plots_path": "/data/home/bkarki/cc/results/async_jax/plots/",
+        "trained_model_params_path": "/data/home/bkarki/cc/results/async_jax/trained_models/"
+    }
+}
