@@ -5,6 +5,7 @@ The purpose of this benchmark is to time dreamerv3 running in different environm
 `docker build -t dreamerv3 .`
 
 ## Run image
+Running the script should take around 15 min. At the end, the log file will be printed to the screen. It contains the execution time for each of the 3 environments.
 `docker run --gpus all dreamerv3 `
 
 ## Run benchmark from interactive shell
