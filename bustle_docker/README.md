@@ -9,7 +9,7 @@ This project uses a supervised model to guide a search algorithm called BUSTLE.
 ```docker build -t <give_an_image_name>```
 
 
-## Check check and run image
+## Check and run image
 
 ```
 docker images
