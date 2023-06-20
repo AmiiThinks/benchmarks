@@ -1,3 +1,9 @@
+## About
+```
+
+This project uses a supervised model to guide a search algorithm called BUSTLE.
+
+```
 ## Docker image build
 
 ```docker build -t <give_an_image_name>```
