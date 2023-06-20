@@ -1,7 +1,11 @@
 # IMPALA Benchmark
 Author: Subhojeet Pramanik
 
-This repository contains a benchmark for training neural network models using Impala. The benchmark can run different types of models.
+This repository contains a benchmark for training neural network models using Impala. IMPALA is a **reinforcement learning algorithm** that uses an **actor-critic** framework to learn from **experience trajectories**. It **decouples data collecting from learning** by having multiple actors that send trajectories of states, actions and rewards to a centralized learner. The learner then updates the policy and value networks using a GPU and mini-batches of trajectories. 
+
+However, because the actors may use an outdated policy compared to the learner, the learning becomes **off-policy**. To correct for this discrepancy, IMPALA uses an **off-policy correction method** called **V-trace** that adjusts the importance weights and the target values of the trajectories.
+
+IMPALA is designed for **scalable distributed deep reinforcement learning** and can handle a large collection of tasks using a single agent with a single set of parameters. It can achieve high throughput and data efficiency by parallelizing the actors and the learner.
 
 ## System Requirements
 
