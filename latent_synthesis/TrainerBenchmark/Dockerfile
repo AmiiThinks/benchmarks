@@ -17,6 +17,6 @@ CMD python3 main_trainer.py \
     --data_class_name ProgramsAndDemosDataset \
     --data_program_dataset_path data/reduced_programs_dataset.pkl \
     --model_hidden_size 256 \
-    --data_batch_size 32 \
+    --data_batch_size 128 \
     --data_max_demo_length 1000 \
     --trainer_num_epochs 10
