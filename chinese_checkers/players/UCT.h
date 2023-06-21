@@ -17,8 +17,8 @@
 #include "Player.h"
 #include "CCheckers.h"
 #include "Timer.h"
-#include "/Users/bigyankarki/opt/anaconda3/envs/cc2/include/pybind11/pybind11.h"
-#include "/Users/bigyankarki/opt/anaconda3/envs/cc2/include/pybind11/stl.h"
+#include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 
 namespace py = pybind11;
 

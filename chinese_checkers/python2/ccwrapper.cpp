@@ -7,7 +7,7 @@
  *
 */
 
-#include </Users/bigyankarki/opt/anaconda3/envs/cc2/include/pybind11/pybind11.h>
+#include <pybind11/pybind11.h>
 #include <iostream>
 #include "CCheckers.h"
 #include "DistEval.h"
