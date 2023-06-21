@@ -2,9 +2,19 @@
 
 Author: Tales H. Carvalho (taleshen@ualberta.ca)
 
-In this document, I list two options for running the benchmarks: Using Docker or virtualenv. In Compute Canada it is simpler to use virtualenv as Docker is not natively supported.
+In this document, I list two options for running the benchmarks: Using Docker or Python's Virtualenv. In Compute Canada it is simpler to use Virtualenv as Docker is not natively supported, however using Singularity/Apptainer with the provided Dockerfile is also an available option.
 
-## Setup Docker to use GPU
+## About the benchmarks
+
+The two benchmarks in this folder are related to using neural program synthesis on a latent space to find programmatic policies that maximize reward in a Reinforcement Learning environment.
+
+**TrainerBenchmark** tests the process of training a latent space of programs. This mainly relies on a GPU to train a neural model using PyTorch. The setup requires at least 32GB of GPU RAM to allocate the necessary memory. This benchmark is then evaluated by its completion time, available in the last line of stdout after the command execution.
+
+**CEMBenchmark** tests the process of searching for a program in latent space. This mainly relies on multiple CPU processes to parallelize the search as much as possible. There is no constraint on the number of CPU cores, but the more the better. This benchmark is also evaluated by its completion time, available in the last line of stdout after the command execution.
+
+## Environment setup
+
+### Option 1: Setup Docker to use GPU
 
 **Note**: This guide is based on [NVIDIA Container Toolkit documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
 
@@ -27,18 +37,20 @@ Configure and restart Docker daemon:
 sudo nvidia-ctk runtime configure --runtime=docker && sudo systemctl restart docker
 ```
 
-## Setup Virtualenv
+### Option 2: Setup Virtualenv
 
 **Note**: Assuming python>=3.10.
 
-Create virtualenv and install dependencies:
+This script creates a virtualenv and installs the necessary dependencies:
 ```bash
-python -m venv latent_synthesis_env && source latent_synthesis_env/bin/activate && pip install -r Source/requirements.txt
+./create_venv.sh
 ```
 
-## Trainer Benchmark
+## Executing the benchmarks
 
-### Using Docker
+### TrainerBenchmark
+
+#### Option 1: Using Docker
 
 Building Docker image:
 ```bash
@@ -53,29 +65,16 @@ docker run --runtime=nvidia --gpus all latentsyn_trainer_benchmark
 **Note 1**: In some systems, it is not necessary to include the flag `--runtime=nvidia`, but NVIDIA's documentation recommends it for Ubuntu-based systems.
 **Note 2**: The Docker image produced by Trainer Benchmark is very large (~10GB) because it is based on the official PyTorch image that contains CUDA and CudNN for GPU usage.
 
-### Using VirtualEnv
+#### Option 2: Using VirtualEnv
 
-Source virtualenv:
+This script sources virtualenv and executes the benchmark:
 ```bash
-source latent_synthesis_env/bin/activate
+./run_trainer_on_venv.sh
 ```
 
-Run benchmark command:
-```bash
-cd Source && python3 main_trainer.py \
-    --experiment_name leaps_vae_benchmark \
-    --model_name LeapsVAE \
-    --data_class_name ProgramsAndDemosDataset \
-    --data_program_dataset_path data/reduced_programs_dataset.pkl \
-    --model_hidden_size 256 \
-    --data_batch_size 32 \
-    --data_max_demo_length 1000 \
-    --trainer_num_epochs 10
-```
+### CEMBenchmark
 
-## CEM Benchmark
-
-### Using Docker
+#### Option 1: Using Docker
 
 Building Docker image:
 ```bash
@@ -87,26 +86,9 @@ Executing benchmark:
 docker run latentsyn_cem_benchmark
 ```
 
-### Using Virtualenv
+#### Option 2: Using Virtualenv
 
-Source virtualenv:
+This script sources virtualenv and executes the benchmark:
 ```bash
-source latent_synthesis_env/bin/activate
-```
-
-Run benchmark command:
-```bash
-cd Source && python3 main_latent_search.py \
-    --experiment_name leaps_cem_benchmark \
-    --env_task FourCorners \
-    --model_name LeapsVAE \
-    --model_hidden_size 256 \
-    --model_params_path params/leaps_vae_256.ptp \
-    --model_seed 1 \
-    --search_population_size 256 \
-    --data_max_demo_length 1000 \
-    --search_number_executions 16 \
-    --search_number_iterations 50 \
-    --multiprocessing_active \
-    --disable_gpu
+./run_cem_on_venv.sh
 ```
