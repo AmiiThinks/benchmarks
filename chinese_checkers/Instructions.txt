@@ -1,0 +1,21 @@
+# Instructions to run the program
+1. Install dependencies 
+    conda create --name cc2 python=3.8 
+    conda activate cc2 
+    conda install pybind11 # pip3 install pybind11 doesn't work
+    pip3 install -r requirements.txt (for CPU)
+    pip3 install -r requirements_gpu.txt (for GPU) # jaxlib depends on available CUDA and CUDNN version (https://github.com/google/jax#installation)
+                                                   # This is is for CUDNN version: 8.9, CUDA version: 11.6
+
+2. Create Chinese Checker board environment
+    cd build
+    cmake ..
+    make # make sure the paths to pybind.h, numpy.h are correct
+
+    # the c++ wrapper (.so) file is in build, move it to python2/wrappers
+
+3. Run Self-play benchmark (benchmark 1)
+    bash benchmark_1.sh
+
+4. Run training benchmark (benchmark 2)
+    bash benchmark_2.sh

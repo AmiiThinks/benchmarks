@@ -1,0 +1,23 @@
+{
+    "self_play" : {
+        "games": 300,
+        "iterations": 10
+    },
+    "mcts": {
+        "samples": 400
+    },
+    "training" : {
+        "batch_size": 64,
+        "epochs": 1,
+        "learning_rate": 0.00001,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "seed": 42
+    },
+    "file": {
+        "training_data": "/Users/bigyankarki/Desktop/bigyan/4_4_3/",
+        "training_data_parallel": "/Users/bigyankarki/Desktop/bigyan/4_4_3_parallel/",
+        "trained_model_params_path": "/Users/bigyankarki/Desktop/bigyan/cc/chinese-checkers/python2/trained_model_params/",
+        "trained_model_params_path_parallel": "/Users/bigyankarki/Desktop/bigyan/cc/chinese-checkers/python2/trained_model_params_parallel/"
+    }
+}
