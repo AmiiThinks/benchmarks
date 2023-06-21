@@ -2,8 +2,8 @@
 #include <iostream>
 #include "screenUtil.h"
 #include <vector>
-#include "/Users/bigyankarki/opt/anaconda3/envs/cc2/include/pybind11/pybind11.h"
-#include "/Users/bigyankarki/opt/anaconda3/envs/cc2/include/pybind11/numpy.h"
+#include <pybind11/pybind11.h>
+#include <pybind11/numpy.h>
 
 namespace py = pybind11;
 
