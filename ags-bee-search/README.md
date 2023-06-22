@@ -1,6 +1,9 @@
 # Auxilary Guided Synthesis
 Auxilary guided synthesis is an approach to augmenting program libraries to improve problem-solving in the Program Synthesis domain. Project for solving SyGuS tasks using bee search and bustle-like model.
 
+## Authors: 
+Saqib Ameen, Thirupathi Reddy, and Habib Rahman
+
 # Usage
 
 ## Docker image build
