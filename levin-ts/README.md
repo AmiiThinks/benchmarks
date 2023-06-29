@@ -1,3 +1,6 @@
+This benchmark uses a variable number of CPU core, and no GPU. **NOTE there is a bug in
+this implementation that requires <world_size> to be greater than 1 (and <= the number of available cores).
+
 Build the container:
 ```bash
 docker build -t levin-ts .
